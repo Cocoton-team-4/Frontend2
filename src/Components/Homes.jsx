@@ -8,7 +8,7 @@ export default function Homes({ response }) {
     <div>
       <div
         onClick={(e) => {
-          navigate(`/main`);
+          navigate(`/main/${response.name}`, { state: response });
         }}
         style={{ backgroundColor: "white", marginBottom: "20px" }}
       >

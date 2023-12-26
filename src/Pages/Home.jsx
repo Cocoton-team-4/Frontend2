@@ -22,7 +22,7 @@ export default function Home() {
 
     // Call API directly here
     axios
-      .get(`https://4afa-1-209-175-113.ngrok-free.app/reborner/search`, {
+      .get(`https://38c9-1-209-175-113.ngrok-free.app/reborner/search`, {
         params: {
           name: rebornName,
           deathDate,
@@ -102,7 +102,14 @@ export default function Home() {
       </form>
       <SearchResult>
         분향소 리스트
-        <div>{response && <Homes response={response} key={response.id} />}</div>
+        {response &&
+          response.map((item) => (
+            <div key={item.rebornerId}>
+              <div>
+                {item && <Homes response={item} key={item.rebornerId} />}
+              </div>
+            </div>
+          ))}
       </SearchResult>
     </Homepage>
   );

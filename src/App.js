@@ -20,7 +20,7 @@ function App() {
             <Route path="/find" element={<Find />} />
             <Route path="/myPage" element={<MyPage />} />
             <Route path="/login" element={<LoginPage />} />
-            <Route path="/main" element={<Main />} />
+            <Route path="/main/:main" element={<Main />} />
             <Route path="/make" element={<Make />} />
             <Route path="/create" element={<Create />} />
             <Route path="/chat" element={<Chat />} />

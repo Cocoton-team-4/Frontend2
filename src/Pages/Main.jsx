@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import Modal from "./Modal";
 
 export default function Main() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { title } = useParams();
+  const { state } = useLocation();
   const navigate = useNavigate();
   const openModal = () => {
     setIsModalOpen(true);
@@ -21,18 +24,18 @@ export default function Main() {
         <div className="grid">
           <div>
             이름
-            <div className="info"></div>
+            <div className="info">{state.name}</div>
           </div>
           <div>
             분향소 생성자
-            <div className="info"></div>
+            <div className="info">{state.creator}</div>
           </div>
           <div>
             발인날짜
-            <div className="info"></div>
+            <div className="info">{state.deathDate}</div>
           </div>
           <div>
-            <div className="info">고정멘트</div>
+            <div className="info">삼가 고인의 명복을 빕니다</div>
           </div>
         </div>
       </div>

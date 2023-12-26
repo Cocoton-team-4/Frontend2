@@ -21,6 +21,7 @@ export default function Chat() {
     <div>
       <Container></Container>
       <ul class="chat-screen_texts">
+        <span>코코</span>
         <li class="text">고마웠어 잘지내</li>
         <li class="text">안녕</li>
       </ul>
