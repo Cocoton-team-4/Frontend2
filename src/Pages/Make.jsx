@@ -30,7 +30,7 @@ export default function Make() {
   return (
     <MakeDeath flex>
       <div className="middle">
-        <div className="make">분향소생성</div>
+        <div className="make1">분향소생성</div>
       </div>
 
       <br></br>
@@ -140,13 +140,26 @@ const MakeDeath = styled.div`
   width: 70%;
   top: 100px;
   height: 100%;
+  padding-bottom: 150px;
 
+  .make1 {
+    font-size: 30px;
+  }
   .make {
     font-size: 20px;
   }
+  .middle{
+    margin-top: 50px;
+  }
   .checkinfo1 {
     display: flex;
-    justify-content: space-between;
+    margin-left: 30px;
+  }
+  .checkinfo1 > div {
+    margin-right: 60px; /* 입력 필드 간의 수평 간격을 조절합니다. */
+  }
+  .checkinfo1 > input {
+    margin-right: 100px; /* 입력 필드 간의 수평 간격을 조절합니다. */
   }
   .middle {
     display: flex;
