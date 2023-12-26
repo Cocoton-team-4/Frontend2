@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 export default function LoginPage() {
   const [inputs, setInputs] = useState({
     id: "",
-    pw: "",
+    password: "",
   });
-  const { id, pw } = inputs;
+  const { id, password } = inputs;
 
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -26,8 +26,36 @@ export default function LoginPage() {
     e.preventDefault();
     setLoading(true);
 
-    alert("환영합니다");
-    navigate(`/`);
+    axios
+      .post("https://localhost:8000/signin:", {
+        id,
+        password,
+      })
+
+      .then((response) => {
+        //loading 1.5초 이후 없애기
+        alert("환영합니다");
+        navigate(`/`);
+
+        console.log(response);
+      })
+      .catch((error) => {
+        const code = error.response.status;
+        console.log(code);
+
+        if (code === 400) {
+          alert("등록되지 않은 회원이거나 비밀번호가 잘못되었음");
+          return;
+        }
+        if (code === 401) {
+          alert("이미 로그인 중인 상태입니다.");
+          return;
+        }
+        if (code === 500) {
+          alert("네트워크 오류");
+          return;
+        }
+      });
   };
 
   return (
@@ -47,7 +75,12 @@ export default function LoginPage() {
           />
           <br />
           <div>비밀번호</div>
-          <input type="password" value={pw} onChange={onChange} name="pw" />
+          <input
+            type="text"
+            value={password}
+            onChange={onChange}
+            name="password"
+          />
           <br />
           <br />
           <br />
