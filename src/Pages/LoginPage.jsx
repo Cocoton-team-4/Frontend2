@@ -9,7 +9,7 @@ export default function LoginPage() {
     pw: "",
   });
   const { id, pw } = inputs;
-  const [msg, setMsg] = useState("");
+
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -25,7 +25,6 @@ export default function LoginPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    setMsg("Loading...");
 
     alert("환영합니다");
     navigate(`/`);
@@ -33,7 +32,9 @@ export default function LoginPage() {
 
   return (
     <LoginContainer>
-      <div>로그인</div>
+      <div className="loginname">
+        <div>로그인</div>
+      </div>
       <div>
         <form onSubmit={handleSubmit}>
           <div>아이디</div>
@@ -49,11 +50,17 @@ export default function LoginPage() {
           <input type="password" value={pw} onChange={onChange} name="pw" />
           <br />
           <br />
-
+          <br />
           <Submit type="submit" value="로그인" disabled={loading} />
         </form>
-        <Submit type="submit" value="회원가입" disabled={loading} />
-        <div>{msg}</div>
+        <br></br>
+        <Submit
+          type="submit"
+          value="회원가입"
+          onClick={(e) => {
+            navigate(`/create`);
+          }}
+        />
       </div>
     </LoginContainer>
   );
@@ -67,6 +74,10 @@ const LoginContainer = styled.div`
   left: 30%;
   width: 500px;
   align-items: center;
+  .loginname {
+    display: flex;
+    justify-content: center;
+  }
   div {
     position: relative;
 
@@ -85,12 +96,19 @@ const LoginContainer = styled.div`
         width: 100%;
         height: 40px;
 
-        border-style: solid;
-        border-radius: 10px;
-        border-color: rgb(179, 176, 176);
+        border-style: none;
+        border-radius: 20px;
+        background-color: rgb(217, 213, 213);
+        &:nth-child(9) {
+          background-color: #bd6ad6;
+          border-radius: 10px;
+          color: black;
+        }
         &:nth-child(3) {
-          background-color: black;
-          border-radius: 20px;
+          color: black;
+          background-color: white;
+          border: 2px solid #bd6ad6;
+          border-radius: 10px;
         }
       }
     }
