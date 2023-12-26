@@ -4,6 +4,8 @@ import Home from "./Pages/Home";
 import Find from "./Pages/Find";
 import MyPage from "./Pages/MyPage";
 import LoginPage from "./Pages/LoginPage";
+import Make from "./Pages/Make";
+import Create from "./Pages/Create";
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
             <Route path="/find" element={<Find />} />
             <Route path="/myPage" element={<MyPage />} />
             <Route path="/login" element={<LoginPage />} />
+            <Route path="/make" element={<Make />} />
+            <Route path="/create" element={<Create />} />
           </Routes>
         </div>
       </BrowserRouter>
