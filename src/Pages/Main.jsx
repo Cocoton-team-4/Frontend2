@@ -4,28 +4,31 @@ import { useNavigate } from "react-router-dom";
 import Modal from "./Modal";
 
 export default function Main() {
-    const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const navigate = useNavigate();
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
 
-    const openModal = () => {
-        setIsModalOpen(true);
-    };    
-
-    const closeModal = () => {
-        setIsModalOpen(false);
-    };
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
   return (
     <Mains>
       <div className="container">
         <div className="photo">사진</div>
         <div className="grid">
-          <div>이름
+          <div>
+            이름
             <div className="info"></div>
           </div>
-          <div>분향소 생성자
+          <div>
+            분향소 생성자
             <div className="info"></div>
           </div>
-          <div>발인날짜
+          <div>
+            발인날짜
             <div className="info"></div>
           </div>
           <div>
@@ -34,7 +37,9 @@ export default function Main() {
         </div>
       </div>
       <div className="button">
-        <div className="visit">방명록</div>
+        <div className="visit" onClick={() => navigate("/chat")}>
+          방명록
+        </div>
         <div className="upload" onClick={openModal}>
           추억 업로드
         </div>
@@ -103,15 +108,15 @@ const Mains = styled.div`
     justify-content: center;
     line-height: 40px;
     margin-right: 150px;
-    background-color: #FB8A8A;
+    background-color: #fb8a8a;
     border-radius: 5px;
   }
 
-  .photos{
+  .photos {
     display: flex;
     margin-top: 100px;
   }
-  .photoBlock{
+  .photoBlock {
     margin-right: 50px;
     width: 410px;
     height: 350px;

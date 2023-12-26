@@ -7,6 +7,7 @@ import Main from "./Pages/Main";
 import LoginPage from "./Pages/LoginPage";
 import Make from "./Pages/Make";
 import Create from "./Pages/Create";
+import Chat from "./Pages/Chat";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/main" element={<Main />} />
             <Route path="/make" element={<Make />} />
             <Route path="/create" element={<Create />} />
+            <Route path="/chat" element={<Chat />} />
           </Routes>
         </div>
       </BrowserRouter>

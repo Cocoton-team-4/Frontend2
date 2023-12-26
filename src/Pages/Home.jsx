@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Homes from "../Components/Homes";
 
 export default function Home() {
-  const navigate = useNavigate();
-
   const [response, setResponse] = useState(null);
   const [searchInfo, setSearchInfo] = useState({
     rebornName: "",
@@ -14,29 +11,26 @@ export default function Home() {
     birthDate: "",
     phoneNumber: "",
   });
+
   const handleSearch = (e) => {
     e.preventDefault();
     const { rebornName, deathDate, birthDate, phoneNumber } = searchInfo;
     if (!rebornName && !deathDate && !birthDate && !phoneNumber) {
       alert("하나 이상의 검색어를 입력하세요.");
       return;
-
-      // Add your search logic here
     }
-  };
-  const onChange = (e) => {
-    const { name, value } = e.target;
-    setSearchInfo((prevInputs) => ({
-      ...prevInputs,
-      [name]: value,
-    }));
-  };
 
-  const handleSubmit = () => {
+    // Call API directly here
     axios
-      .get(
-        `http://8833-1-209-175-114.ngrok-free.app/reborner/search?name=${searchInfo.rebornName}&deathDate=${searchInfo.deathDate}&birthDate=${searchInfo.birthDate}&phoneNumber=${searchInfo.phoneNumber}`
-      )
+      .get(`https://4afa-1-209-175-113.ngrok-free.app/reborner/search`, {
+        params: {
+          name: rebornName,
+          deathDate,
+          birthDate,
+          phoneNumber,
+        },
+        headers: { "ngrok-skip-browser-warning": true },
+      })
       .then((response) => {
         console.log(response);
         setResponse(response.data); // Set the API response to state
@@ -45,12 +39,20 @@ export default function Home() {
         console.error("Error fetching data:", error);
       });
   };
+
+  const onChange = (e) => {
+    const { name, value } = e.target;
+    setSearchInfo((prevInputs) => ({
+      ...prevInputs,
+      [name]: value,
+    }));
+  };
   return (
     <Homepage>
       <Title>
         <H1>분향소 검색</H1>
       </Title>
-      <form onSubmit={handleSubmit}>
+      <form>
         <Container>
           <GridContainer>
             <GridItem>
@@ -100,7 +102,7 @@ export default function Home() {
       </form>
       <SearchResult>
         분향소 리스트
-        <div>{response && <Homes response={response} />}</div>
+        <div>{response && <Homes response={response} key={response.id} />}</div>
       </SearchResult>
     </Homepage>
   );

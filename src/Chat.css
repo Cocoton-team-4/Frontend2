@@ -1,0 +1,46 @@
+.chat-screen_texts {
+  position: absolute;
+  top: 500px;
+  left: 60%;
+  padding: 0;
+  list-style-type: none;
+  overflow-x: hidden; /* 가로 스크롤 제거 */
+  overflow-y: auto; /* 세로 스크롤 활성화 */
+}
+.chat-screen_texts > .text {
+  background-color: yellow;
+  width: 280px;
+  height: 50px;
+  margin: 0 0 10px 0;
+  padding: 10px;
+  border-radius: 8px;
+  line-height: 30px;
+  position: relative;
+  left: 20px;
+
+  overflow: hidden;
+}
+.chat-screen_texts > .text::after {
+  content: "";
+  border-right: 16px solid yellow;
+  position: absolute;
+  border-bottom: 16px solid transparent;
+  top: 10px;
+  left: -10px;
+}
+.chat-screen_texts > .text:hover {
+  background-color: wheat;
+  transition: background-color 1500ms 200ms ease-in;
+}
+.chat-screen_texts > .text:hover::after {
+  border-right: 16px solid wheat;
+  transition: border-right 1500ms 200ms ease-in;
+}
+
+div.container {
+  overflow: hidden;
+}
+.chat-screen_texts {
+  max-height: calc(100% - 120px);
+  overflow: auto;
+}

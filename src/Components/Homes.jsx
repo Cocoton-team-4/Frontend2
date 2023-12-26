@@ -6,20 +6,17 @@ export default function Homes({ response }) {
 
   return (
     <div>
-      {response.map((item, index) => (
-        <div
-          key={index}
-          onClick={(e) => {
-            navigate(`/main`);
-          }}
-          style={{ backgroundColor: "white", marginBottom: "20px" }}
-        >
-          <p>이름: {item.name}</p>
-          <p>생년월일: {item.birthDate}</p>
-          <p>발인날짜: {item.deathDate}</p>
-          <p>전화번호: {item.phoneNumber}</p>
-        </div>
-      ))}
+      <div
+        onClick={(e) => {
+          navigate(`/main`);
+        }}
+        style={{ backgroundColor: "white", marginBottom: "20px" }}
+      >
+        <p>이름: {response.name}</p>
+        <p>생년월일: {response.birthDate}</p>
+        <p>발인날짜: {response.deathDate}</p>
+        <p>전화번호: {response.phoneNumber}</p>
+      </div>
     </div>
   );
 }
