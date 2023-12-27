@@ -20,7 +20,7 @@ export default function Main() {
   return (
     <Mains>
       <div className="container">
-        <div className="photo"><img src="/chihuahua.jpg" style={{ maxWidth: '100%', height: '100%' }}/></div>
+        <div className="photo"><img src="/person.jpg" style={{ maxWidth: '100%', height: '100%' }}/></div>
         <div className="grid">
           <div>
             <span>이름</span>
@@ -48,8 +48,8 @@ export default function Main() {
         </div>
       </div>
       <div className="photos">
-        <div className="photoBlock"><img src="/photo1.jpg" style={{ maxWidth: '100%', height: '100%' }}/></div>
-        <div className="photoBlock"><img src="/photo2.jpg" style={{ maxWidth: '100%', height: '100%' }}/></div>
+        <div className="photoBlock"><img src="/puppy.jpg" style={{ maxWidth: '100%', height: '100%' }}/></div>
+        <div className="photoBlock"><img src="/family.jpg" style={{ maxWidth: '100%', height: '100%' }}/></div>
         <div className="photoBlock"><img src="/photo3.jpg" style={{ maxWidth: '100%', height: '100%' }}/></div>
       </div>
       <Modal isOpen={isModalOpen} onClose={closeModal} />
@@ -136,11 +136,11 @@ const Mains = styled.div`
   .photos {
     display: flex;
     margin-top: 100px;
+    margin-left: 120px;
   }
   .photoBlock {
-    margin-right: 50px;
-    width: 410px;
-    height: 350px;
+    width: 350px;
+    height: 250px;
     background-color: grey;
   }
 `;
