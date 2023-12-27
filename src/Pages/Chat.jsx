@@ -21,7 +21,7 @@ export default function Chat() {
     <div>
       <Container></Container>
       <ul class="chat-screen_texts">
-        <span>코코</span>
+        <CoCo>코코</CoCo>
         <li class="text">고마웠어 잘지내</li>
         <li class="text">안녕</li>
       </ul>
@@ -46,6 +46,10 @@ export default function Chat() {
   );
 }
 
+const CoCo = styled.div`
+  position: relative;
+  right: -270px;
+`;
 const Container = styled.div`
   position: absolute;
   top: 80px;

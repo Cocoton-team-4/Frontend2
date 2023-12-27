@@ -39,12 +39,12 @@ export default function Make() {
           <hr></hr>
         </div>
         <div className="middle">
-          <div className="make">고인정보</div>
+          <div className="make">RE:BORNER정보</div>
         </div>
         <br></br>
         <br></br>
         <div className="checkinfo1">
-          <div>고인명</div>
+          <div>RE:BORNER명</div>
           <input
             type="text"
             value={deathname}
@@ -86,7 +86,7 @@ export default function Make() {
         </div>
         <br></br>
         <div className="checkinfo1">
-          <div>고인과의 관계</div>
+          <div>RE:BORNER와의 관계</div>
           <input
             type="text"
             value={relation}

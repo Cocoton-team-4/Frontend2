@@ -22,12 +22,12 @@ export default function Home() {
 
     // Call API directly here
     axios
-      .get(`https://b7cc-1-209-175-113.ngrok-free.app/reborner/search`, {
+      .get(`https://3ccc-1-209-175-113.ngrok-free.app/reborner/search`, {
         params: {
-          name: rebornName,
-          deathDate,
-          birthDate,
-          phoneNumber,
+          name: searchInfo.rebornName,
+          deathDate: searchInfo.deathDate,
+          birthDate: searchInfo.birthDate,
+          phoneNumber: searchInfo.phoneNumber,
         },
         headers: { "ngrok-skip-browser-warning": true },
       })

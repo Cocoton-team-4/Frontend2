@@ -38,14 +38,12 @@ const Modal = ({ isOpen, onClose }) => {
 
   const handlePostUpload = async () => {
     try {
-
-      const response = await axios.post(`/posting/1`, { //////////////////////////고인의 아이디
+      const response = await axios.post(`/posting/1`, {
+        //////////////////////////고인의 아이디
         plot: plot,
         picture: fileId,
         date: date,
       });
-
-      
 
       if (response.status === 200) {
         console.log("Post uploaded successfully");
@@ -55,17 +53,18 @@ const Modal = ({ isOpen, onClose }) => {
       } else {
         console.error("Failed to upload post");
       }
-    } catch (error) {console.log("와아아아아", plot, fileId, date);
+    } catch (error) {
+      console.log("와아아아아", plot, fileId, date);
       console.error("Error during post upload:", error);
     }
   };
 
   const handleGetPostList = async () => {
     try {
-      const response = await axios.get("/posting/1",  {
+      const response = await axios.get("/posting/1", {
         headers: { "ngrok-skip-browser-warning": true },
       }); // 예시 URL
-  
+
       if (response.status === 200) {
         const result = response.data;
         console.log("Post List:", result.postList);
@@ -76,7 +75,6 @@ const Modal = ({ isOpen, onClose }) => {
       console.error("Error during post list retrieval:", error);
     }
   };
-  
 
   if (!isOpen) return null;
 
@@ -91,10 +89,27 @@ const Modal = ({ isOpen, onClose }) => {
               업로드
             </button>
           </div>
-          <div style={{position: "absolute", top: "420px", left: "350px"}}>내용(선택)<input type="text" onChange={(e) => setPlot(e.target.value)} /></div>
-            <div style={{position: "absolute", top: "500px", left: "350px"}}>날짜<input onChange={(e) => setDate(e.target.value)} type="date" /></div>
-            <div onClick={handlePostUpload} style={ {position: "absolute", textAlign: "center", left: "700px", top: "600px", width: "100px", backgroundColor: "#D79BEC"}}>업로드</div>
-            
+          <div style={{ position: "absolute", top: "420px", left: "350px" }}>
+            내용(선택)
+            <input type="text" onChange={(e) => setPlot(e.target.value)} />
+          </div>
+          <div style={{ position: "absolute", top: "500px", left: "350px" }}>
+            날짜
+            <input onChange={(e) => setDate(e.target.value)} type="date" />
+          </div>
+          <div
+            onClick={handlePostUpload}
+            style={{
+              position: "absolute",
+              textAlign: "center",
+              left: "700px",
+              top: "600px",
+              width: "100px",
+              backgroundColor: "#D79BEC",
+            }}
+          >
+            업로드
+          </div>
         </div>
         <span className="closeButton" onClick={onClose}>
           X
@@ -158,7 +173,7 @@ const ModalContent = styled.div`
     width: 100px;
     height: 30px;
     margin-top: 10px;
-    background-color: #D79BEC;
+    background-color: #d79bec;
     display: flex;
     align-items: center;
     justify-content: center;

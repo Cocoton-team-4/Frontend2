@@ -27,7 +27,7 @@ export default function LoginPage() {
     setLoading(true);
 
     axios
-      .post("https://9529-1-209-175-114.ngrok-free.app/signin", {
+      .post("http://43.201.164.245:8000/signin", {
         id,
         password,
       })
@@ -55,6 +55,9 @@ export default function LoginPage() {
           alert("네트워크 오류");
           return;
         }
+      })
+      .finally(() => {
+        setLoading(false);
       });
   };
 
