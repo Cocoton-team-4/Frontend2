@@ -22,7 +22,7 @@ export default function Home() {
 
     // Call API directly here
     axios
-      .get(`https://38c9-1-209-175-113.ngrok-free.app/reborner/search`, {
+      .get(`https://b7cc-1-209-175-113.ngrok-free.app/reborner/search`, {
         params: {
           name: rebornName,
           deathDate,
