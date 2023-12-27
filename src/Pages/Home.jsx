@@ -101,7 +101,6 @@ export default function Home() {
         </Container>
       </form>
       <SearchResult>
-        분향소 리스트
         {response &&
           response.map((item) => (
             <div key={item.rebornerId}>
@@ -179,6 +178,8 @@ const SearchButton = styled.input`
 `;
 
 const SearchResult = styled.h3`
-  background-color: grey;
+  background-color: white;
   height: 500px;
 `;
+
+

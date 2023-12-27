@@ -20,22 +20,22 @@ export default function Main() {
   return (
     <Mains>
       <div className="container">
-        <div className="photo">사진</div>
+        <div className="photo"><img src="/chihuahua.jpg" style={{ maxWidth: '100%', height: '100%' }}/></div>
         <div className="grid">
           <div>
-            이름
-            <div className="info">{state.name}</div>
+            <span>이름</span>
+            <div className="info" style={{marginTop:"26px"}}>{state.name}</div>
           </div>
           <div>
-            분향소 생성자
-            <div className="info">{state.creator}</div>
+            <span>분향소 생성자</span>
+            <div className="info" style={{marginTop:"26px"}}>{state.creator}</div>
           </div>
           <div>
-            발인날짜
-            <div className="info">{state.deathDate}</div>
+            <span>발인날짜</span>
+            <div className="info" style={{marginTop:"26px"}}>{state.deathDate}</div>
           </div>
-          <div>
-            <div className="info">삼가 고인의 명복을 빕니다</div>
+          <div style={{gridRow:2, gridColumn: "1 / span 3"}}>
+            <div className="info" >삼가 고인의 명복을 빕니다</div>
           </div>
         </div>
       </div>
@@ -48,9 +48,9 @@ export default function Main() {
         </div>
       </div>
       <div className="photos">
-        <div className="photoBlock"></div>
-        <div className="photoBlock"></div>
-        <div className="photoBlock"></div>
+        <div className="photoBlock"><img src="/photo1.jpg" style={{ maxWidth: '100%', height: '100%' }}/></div>
+        <div className="photoBlock"><img src="/photo2.jpg" style={{ maxWidth: '100%', height: '100%' }}/></div>
+        <div className="photoBlock"><img src="/photo3.jpg" style={{ maxWidth: '100%', height: '100%' }}/></div>
       </div>
       <Modal isOpen={isModalOpen} onClose={closeModal} />
     </Mains>
@@ -65,6 +65,20 @@ const Mains = styled.div`
   margin-top: 50px;
   left: 100px;
 
+  span{
+    font-size:18px;
+  }
+  .photoBlock {
+    margin-right: 50px;
+    width: 410px;
+    height: 350px;
+    background-color: grey;
+    transition: transform 0.3s ease-in-out; // Add a transition for smooth scaling
+
+    &:hover {
+      transform: scale(1.1); // Scale to 110% on hover
+    }
+  }
   .container {
     position: relative;
     display: flex;
@@ -87,6 +101,10 @@ const Mains = styled.div`
   }
 
   .info {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    line-height: 50px;
     width: 100%;
     height: 50px;
     background-color: #ddd;

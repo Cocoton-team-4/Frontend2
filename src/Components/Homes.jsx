@@ -10,12 +10,12 @@ export default function Homes({ response }) {
         onClick={(e) => {
           navigate(`/main/${response.name}`, { state: response });
         }}
-        style={{ backgroundColor: "white", marginBottom: "20px" }}
+        style={{ backgroundColor: "white", marginBottom: "20px", fontSize: "20px", marginLeft:"200px", marginTop:"100px"}}
       >
-        <p>이름: {response.name}</p>
-        <p>생년월일: {response.birthDate}</p>
-        <p>발인날짜: {response.deathDate}</p>
-        <p>전화번호: {response.phoneNumber}</p>
+        <h5>이름: {response.name}</h5>
+        <h5>생년월일: {response.birthDate}</h5>
+        <h5>발인날짜: {response.deathDate}</h5>
+        <h5>전화번호: {response.phoneNumber}</h5>
       </div>
     </div>
   );
