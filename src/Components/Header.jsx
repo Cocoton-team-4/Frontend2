@@ -38,7 +38,7 @@ export default function Header() {
             </li>
             <li>
               <Link to="/make" className="header-font">
-                분향소 생성
+                스페이스 생성
               </Link>
             </li>
           </ul>

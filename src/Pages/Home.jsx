@@ -50,7 +50,7 @@ export default function Home() {
   return (
     <Homepage>
       <Title>
-        <H1>분향소 검색</H1>
+        <H1>스페이스 검색</H1>
       </Title>
       <form>
         <Container>
@@ -181,5 +181,3 @@ const SearchResult = styled.h3`
   background-color: white;
   height: 500px;
 `;
-
-

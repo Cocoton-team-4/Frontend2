@@ -20,22 +20,30 @@ export default function Main() {
   return (
     <Mains>
       <div className="container">
-        <div className="photo"><img src="/person.jpg" style={{ maxWidth: '100%', height: '100%' }}/></div>
+        <div className="photo">
+          <img src="/person.jpg" style={{ maxWidth: "100%", height: "100%" }} />
+        </div>
         <div className="grid">
           <div>
             <span>이름</span>
-            <div className="info" style={{marginTop:"26px"}}>{state.name}</div>
+            <div className="info" style={{ marginTop: "26px" }}>
+              {state.name}
+            </div>
           </div>
           <div>
-            <span>분향소 생성자</span>
-            <div className="info" style={{marginTop:"26px"}}>{state.creator}</div>
+            <span>스페이스 생성자</span>
+            <div className="info" style={{ marginTop: "26px" }}>
+              {state.creator}
+            </div>
           </div>
           <div>
             <span>발인날짜</span>
-            <div className="info" style={{marginTop:"26px"}}>{state.deathDate}</div>
+            <div className="info" style={{ marginTop: "26px" }}>
+              {state.deathDate}
+            </div>
           </div>
-          <div style={{gridRow:2, gridColumn: "1 / span 3"}}>
-            <div className="info" >삼가 고인의 명복을 빕니다</div>
+          <div style={{ gridRow: 2, gridColumn: "1 / span 3" }}>
+            <div className="info">삼가 고인의 명복을 빕니다</div>
           </div>
         </div>
       </div>
@@ -48,9 +56,15 @@ export default function Main() {
         </div>
       </div>
       <div className="photos">
-        <div className="photoBlock"><img src="/puppy.jpg" style={{ maxWidth: '100%', height: '100%' }}/></div>
-        <div className="photoBlock"><img src="/family.jpg" style={{ maxWidth: '100%', height: '100%' }}/></div>
-        <div className="photoBlock"><img src="/photo3.jpg" style={{ maxWidth: '100%', height: '100%' }}/></div>
+        <div className="photoBlock">
+          <img src="/puppy.jpg" style={{ maxWidth: "100%", height: "100%" }} />
+        </div>
+        <div className="photoBlock">
+          <img src="/family.jpg" style={{ maxWidth: "100%", height: "100%" }} />
+        </div>
+        <div className="photoBlock">
+          <img src="/photo3.jpg" style={{ maxWidth: "100%", height: "100%" }} />
+        </div>
       </div>
       <Modal isOpen={isModalOpen} onClose={closeModal} />
     </Mains>
@@ -65,8 +79,8 @@ const Mains = styled.div`
   margin-top: 50px;
   left: 100px;
 
-  span{
-    font-size:18px;
+  span {
+    font-size: 18px;
   }
   .photoBlock {
     margin-right: 50px;

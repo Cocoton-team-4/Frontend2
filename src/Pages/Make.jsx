@@ -30,7 +30,7 @@ export default function Make() {
   return (
     <MakeDeath flex>
       <div className="middle">
-        <div className="make1">분향소생성</div>
+        <div className="make1">스페이스 생성</div>
       </div>
 
       <br></br>
@@ -103,7 +103,7 @@ export default function Make() {
         </div>
         <br></br>
         <div className="checkinfo1">
-          <div>온라인 분향소 개방 기간</div>
+          <div>온라인 스페이스 개방 기간</div>
           <div class="radio-group">
             <label>
               <input type="radio" name="option" />
@@ -148,7 +148,7 @@ const MakeDeath = styled.div`
   .make {
     font-size: 20px;
   }
-  .middle{
+  .middle {
     margin-top: 50px;
   }
   .checkinfo1 {
